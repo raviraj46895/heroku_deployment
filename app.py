@@ -6,6 +6,7 @@ import joblib
 #initialise the app
 app= Flask(__name__)
 model= joblib.load('dib_79.pkl')
+print('[INFO] model loaded')
 
 @app.route('/')
 def hello_world():
