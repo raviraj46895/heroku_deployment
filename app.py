@@ -1,12 +1,12 @@
 
 from flask import Flask, render_template, request
-import numpy as np
 import joblib
 
 #initialise the app
-app= Flask(__name__)
 model= joblib.load('dib_79.pkl')
 print('[INFO] model loaded')
+
+app= Flask(__name__)
 
 @app.route('/')
 def hello_world():
@@ -33,6 +33,6 @@ def predict():
 
     return render_template('predict.html',predict=f'the person is{ans}')
 #run the app
-if__name__=='__main__':
+if __name__=='__main__':
     app.run(debug=True)
 
