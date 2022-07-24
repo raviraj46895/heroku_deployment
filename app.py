@@ -33,5 +33,5 @@ def predict():
     return render_template('predict.html',predict=f'the person is{ans}')
 #run the app
 if__name__=='__main__':
-    app.run()
+    app.run(debug=True)
 
