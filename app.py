@@ -22,7 +22,7 @@ def predict():
     pedi = request.form.get('pedi')
     age = request.form.get('age')
 
-    print(preg,plas,pres,skin,test,mass,pedi,age)
+   # print(preg,plas,pres,skin,test,mass,pedi,age)
 
     #output = model.predict([[preg,plas,pres,skin,test,mass,pedi,age]])
     output = np.array([[preg,plas,pres,skin,test,mass,pedi,age]])
@@ -34,4 +34,6 @@ def predict():
 
     return 'Form Submitted'
 #run the app
-app.run(debug=True)
+if__name__=='__main__':
+    app.run()
+
