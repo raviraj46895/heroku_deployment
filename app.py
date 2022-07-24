@@ -31,7 +31,7 @@ def predict():
     else:
         ans ='not dibatic'
 
-    return render_template('predict.html',predict=f'the person is{ans}')
+    return render_template('predict.html',predict=f'the person is {ans}')
 #run the app
 if __name__=='__main__':
     app.run(debug=True)
