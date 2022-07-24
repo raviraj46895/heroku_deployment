@@ -24,13 +24,13 @@ def predict():
 
 
     output = model.predict([[int(preg),int(plas),int(pres),int(skin),int(test),int(mass),int(pedi),int(age)]])
-
+    
     if output[0]==1:
-        print('dibatic')
+        ans = 'dibatic'
     else:
-        print('not dibatic')
+        ans ='not dibatic'
 
-    return 'Form Submitted'
+    return render_template('predict.html',predict=f'the person is{ans}')
 #run the app
 if__name__=='__main__':
     app.run()
