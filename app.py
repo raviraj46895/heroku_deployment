@@ -5,7 +5,7 @@ import joblib
 
 #initialise the app
 app= Flask(__name__)
-model= joblib.load(r'C:\Users\hp\OneDrive\Desktop\deployment\joblib\dib_79.pkl')
+model= joblib.load('dib_79.pkl')
 
 @app.route('/')
 def hello_world():
@@ -22,10 +22,8 @@ def predict():
     pedi = request.form.get('pedi')
     age = request.form.get('age')
 
-   # print(preg,plas,pres,skin,test,mass,pedi,age)
 
-    #output = model.predict([[preg,plas,pres,skin,test,mass,pedi,age]])
-    output = np.array([[preg,plas,pres,skin,test,mass,pedi,age]])
+    output = model.predict([[int(preg),int(plas),int(pres),int(skin),int(test),int(mass),int(pedi),int(age)]])
 
     if output[0]==1:
         print('dibatic')
